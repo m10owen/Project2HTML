@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Journey Continues</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="body">
+    
+    <section class="container">
+        <h1>The Journey Continues</h1>
+<p>With the guardian's riddle behind you, the path forward splits into three.
+     Each route is known to favor certain traits: strength, wisdom, or stealth. Choose your
+    path wisely, as it will influence the challenges you face ahead.</p>
+
+    <form id="supplies" type="get" action="page6.html">
+        <label>Choose your path: </label>
+        <select name="pathChoice" id="pathChoice" required>
+            <option value="">--Please choose an option--</option>
+            <option value="stealth">The Path of Stealth</option>
+            <option value="fight">The Path of Fighting</option>
+            <option value="run">The Path of Running</option>
+          </select>
+
+          <input type="submit" value="Continue on Your Journey" >
+    </form>
+
+<p>Your choice will not only test your abilities but also reveal deeper truths about your 
+    character.</p>
+    </section>
+
+
+    <script>
+        let body = document.getElementById("body"); 
+        let pathChoice = document.getElementById("pathChoice"); 
+         
+
+        pathChoice.addEventListener("change", () => {
+            let value = pathChoice.value;
+            let newPage = document.getElementById("supplies");
+            if (value === "stealth"){
+                body.style.background = 'green'; 
+                body.style.color = 'white'; 
+                newPage.action = "page5b.html";
+            } else  if (value === "fight"){
+                body.style.background = 'gold'; 
+                body.style.color = 'black';
+                newPage.action = "page6.html"; 
+            } else  if (value === "run"){
+                body.style.background = 'blue'; 
+                body.style.color = 'white'; 
+                newPage.action = "page6.html"; 
+            } else {
+                body.style.background = 'white'; 
+                body.style.color = 'black'; 
+                newPage.action = "page6.html"; 
+            }
+        })
+
+
+
+    </script>
+</body>
+</html>
